@@ -1,0 +1,17 @@
+<% provide(:title, "Sermons") %>
+<% @sermons.in_groups_of(4, false).each do |sermon_array| %>	
+       <div class="row">
+           <% for sermon in sermon_array %>
+             <div class="col-md-3" class='sermon'>
+                    <object width="250" height="315"
+		data=<%= sermon.link %>></object>
+                   <h4><%= link_to sermon.title, sermon  %></h4>
+                   <p><%= sermon.preacher %> <br/>
+                           <%= sermon.church %> </p>
+
+             </div>
+            <% end %>
+
+       </div>
+<% end %>
+
