@@ -1,0 +1,12 @@
+<% if @sermon.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@sermon.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @sermon.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

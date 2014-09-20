@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919063244) do
+ActiveRecord::Schema.define(version: 20140920000126) do
+
+  create_table "podcasts", force: true do |t|
+    t.string   "title"
+    t.string   "church"
+    t.string   "preacher"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sermons", force: true do |t|
     t.string   "church"

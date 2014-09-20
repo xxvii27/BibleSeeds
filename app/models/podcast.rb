@@ -1,4 +1,4 @@
-class Sermon < ActiveRecord::Base
+class Podcast < ActiveRecord::Base
 	 validates :title, presence: true
 	 validates :preacher, presence: true
 	 validates :church, presence: true

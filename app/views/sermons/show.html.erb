@@ -1,0 +1,10 @@
+<% provide(:title, @sermon.title) %>
+<div class="row">
+      <div class="col-md-7">
+	<h1 class="page-header"><%= @sermon.title %></h1>
+	<object width="640" height="480"
+			data=<%= @sermon.link %>></object>
+	<p  class="pull-right text-right caption"><%= @sermon.preacher %> <br/>
+                           <%= @sermon.church %> </p>
+       </div>
+</div7

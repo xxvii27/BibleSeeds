@@ -1,0 +1,22 @@
+<% provide(:title, "Podcasts") %>
+
+<div class="row tools">
+      <h1>Podcast/Audio Sermons</h1>
+      <%= link_to "Upload", new_podcast_path, class: "btn btn-primary btn-sm pull-right" %>
+</div>
+
+<% @podcasts.in_groups_of(4, false).each do |podcast_array| %>	
+       <div class="row">
+           <% for podcast in podcast_array %>
+             <div class="col-md-3" class='sermon'>
+                   <embed width="250" height="250" src=<%= podcast.link %> autoplay="false">
+                   <h4><%= link_to podcast.title, podcast  %></h4>
+                   <p><%= podcast.preacher %> <br/>
+                           <%= podcast.church %> </p>
+
+             </div>
+            <% end %>
+
+       </div>
+<% end %>
+
