@@ -8,6 +8,10 @@ class PodcastsController < ApplicationController
 		@podcast = Podcast.new
 	end
 
+	def show
+		@podcast = Podcast.find(params[:id])
+	end
+
 	def create
 		@podcast = Podcast.new(podcast_params)
 		if @podcast.save

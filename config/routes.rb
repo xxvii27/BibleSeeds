@@ -1,8 +1,8 @@
 Bibleseeds::Application.routes.draw do
 
+  get    'bible'   => 'bible#index'
   resources :sermons
   resources :podcasts
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

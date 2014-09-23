@@ -1,0 +1,9 @@
+<% provide(:title, @podcast.title) %>
+<div class="row">
+      <div class="col-md-7">
+	<h1 class="page-header"><%= @podcast.title %></h1>
+	<embed width="640" src=<%= @podcast.link %> autoplay='false'>
+	<p  class="pull-right text-right caption"><%= @podcast.preacher %> <br/>
+                           <%= @podcast.church %> </p>
+       </div>
+</div>
