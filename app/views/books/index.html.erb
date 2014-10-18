@@ -10,7 +10,7 @@
 	    	<% @books.in_groups_of(33, false).each do |book_array| %>	    	
 		    	<ul class="list-unstyled col-md-5 dropcol">
 		    	       <% for b in book_array %>
-		    		<li class="book_link"><%= link_to b.name, b  %></a></li>
+		    		<li class="book_link"><%= link_to b.name, b  %></li>
 		    	       <% end %>
 		    	</ul>	    	
 	    	<% end %>
@@ -22,5 +22,18 @@
 </div>
 
 <div class="row">
-	<%= @res.body.html_safe %>
+
+	<ul class="nav nav-tabs pull-right" role="tablist">
+		  <li class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		      Chapters <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu" role="menu">
+		    	<%(1..@chapter).each do |c|%>
+		    	<li><%= c %></li>
+		    	<% end %>
+		    </ul>
+		  </li>
+	</ul>
+	 <%= @res.body.html_safe %>
 </div>
