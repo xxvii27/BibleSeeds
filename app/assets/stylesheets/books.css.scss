@@ -5,6 +5,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .verse-num, .chapter-num{
 	font-weight: bold;
 	font-size: 16px;
@@ -16,4 +19,32 @@
 }
 
 .book_link > a{
+}
+
+.tools{
+	margin-bottom: 25px;
+	margin-right: 200px;
+}
+
+/* navbar */
+
+@media (min-width: 767px) {
+
+	/* center content navbar */
+	.navbar-center
+	{
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    text-align: center;
+	    margin: auto;
+	    height:100%;
+	}
+
+	.navbar-brand{
+	     float: none;
+	}
+
+
 }

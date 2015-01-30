@@ -1,10 +1,14 @@
 Bibleseeds::Application.routes.draw do
 
-  get    'bible'   => 'books#index'
-  resources :sermons
-  resources :books
-  resources :podcasts
-
+  # resources :sermons
+ resources :books do
+   member do
+               get ':verse_id', :action => 'verse'
+   end
+ end
+ root 'books#index'
+  #resources :podcasts
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

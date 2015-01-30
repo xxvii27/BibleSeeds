@@ -21,7 +21,7 @@
 
 </div>
 
-<div class="row">
+<div class="row tools">
 
 	<ul class="nav nav-tabs pull-right" role="tablist">
 		  <li class="dropdown">
@@ -30,7 +30,7 @@
 		    </a>
 		    <ul class="dropdown-menu" role="menu">
 		    	<%(1..@chapter).each do |c|%>
-		    	<li><%= c %></li>
+		    	<li><%=link_to c, controller: "books", action: "verse", id: @book, verse_id: c%></li>
 		    	<% end %>
 		    </ul>
 		  </li>

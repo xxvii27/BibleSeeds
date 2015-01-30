@@ -1,9 +1,7 @@
 class BooksController < ApplicationController
 	
 	def index
-	    	  @books = Book.all
-	  	  @res = init_api "Genesis"
-	  	  @chapter = 50
+		redirect_to :controller=>'books', :action => 'show', :id => 1
   	end
 
 
@@ -13,6 +11,15 @@ class BooksController < ApplicationController
 		@chapter = @book.verse
 		@res = init_api @book.name
 	end
+
+	def  verse
+		@books = Book.all
+		@book = Book.find(params[:id])
+	  	@chapter = @book.verse
+	  	@res = init_api @book.name + params[:verse_id]
+            end
+
+
 
 	private
 
