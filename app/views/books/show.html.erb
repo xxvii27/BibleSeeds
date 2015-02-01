@@ -1,5 +1,11 @@
 <div class="row tools">
-	
+
+	<div class="pull-left"> 
+	<%= form_tag(controller: "books", action: "search", method: "get") do %>
+	  <%= text_field_tag :s_val, params[:s_val], class: "form-control", placeholder: "Search..." %>
+	<% end %>
+	</div>
+
 	<ul class="nav nav-tabs pull-right" role="tablist">
 	  <li class="dropdown">
 	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -10,7 +16,7 @@
 	    	<% @books.in_groups_of(33, false).each do |book_array| %>	    	
 		    	<ul class="list-unstyled col-md-5 dropcol">
 		    	       <% for b in book_array %>
-		    		<li class="book_link"><%= link_to b.name, b  %></li>
+		    		<li><%= link_to b.name, b  %></li>
 		    	       <% end %>
 		    	</ul>	    	
 	    	<% end %>

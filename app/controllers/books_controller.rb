@@ -5,18 +5,29 @@ class BooksController < ApplicationController
   	end
 
 
-	def show
+	def show #books/:id
 		@books = Book.all
 		@book = Book.find(params[:id])
 		@chapter = @book.verse
 		@res = init_api @book.name
 	end
 
-	def  verse
+	def  verse #books/:id/:verse_id
 		@books = Book.all
 		@book = Book.find(params[:id])
 	  	@chapter = @book.verse
 	  	@res = init_api @book.name + params[:verse_id]
+	  	render "show"
+            end
+
+            def search       #books/search
+                        @books = Book.all   
+                        name = params[:s_val]
+                        book_title = name.split(' ')
+                        @book = Book.find_by name: book_title.first
+                        @chapter = @book.verse
+            	@res = init_api params[:s_val]
+            	render "show"
             end
 
 

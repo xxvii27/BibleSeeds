@@ -1,9 +1,12 @@
 Bibleseeds::Application.routes.draw do
 
   # resources :sermons
- resources :books do
+ resources :books, :path => ''  do
    member do
                get ':verse_id', :action => 'verse'
+   end
+   collection do
+               post 'search', :action => 'search'
    end
  end
  root 'books#index'

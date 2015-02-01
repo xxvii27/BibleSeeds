@@ -8,6 +8,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// ColorVariables
+$link: #577492;
+
 .verse-num, .chapter-num{
 	font-weight: bold;
 	font-size: 16px;
@@ -24,6 +27,26 @@
 .tools{
 	margin-bottom: 25px;
 	margin-right: 200px;
+}
+
+//Links
+
+.dropdown-menu > li > a {
+	color: $link;
+}
+
+.dropdown-menu > li > a:hover {
+	color: $link;
+	background-color: white;
+	text-decoration: underline;
+}
+
+.dropcol > li > a{
+	color: $link;
+}
+
+.dropcol > li > a:hover{
+	color: $link;
 }
 
 /* navbar */
