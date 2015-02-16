@@ -1,5 +1,3 @@
-require 'youtube_it'
-
 class BooksController < ApplicationController
 	
 	def index
@@ -28,7 +26,12 @@ class BooksController < ApplicationController
                         @books = Book.all   
                         name = params[:s_val]
                         book_title = name.split(' ')
-                        @book = Book.find_by name: book_title.first.downcase.capitalize
+                        if book_title.first == '1' || book_title.first == '2' || book_title.first == '3'
+                        	bookQuery = book_title.first + " " + book_title[1].downcase.capitalize
+                        	@book = Book.find_by name: bookQuery
+                        else
+                        	@book = Book.find_by name: book_title.first.downcase.capitalize
+                        end
                         @chapter = @book.verse
             	@res = init_api params[:s_val]
             	@videos = init_youtube params[:s_val]
