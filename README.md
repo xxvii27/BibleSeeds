@@ -1,4 +1,5 @@
 #README
 
-Bible study tools and commentatory, either to help pastors to collect and prepare sermon materials or to help people to learn the bible more efficiently.
+Bible with youtube integration, makes it easy for people to search for relevant videos without the need to browse another site.
+
 
