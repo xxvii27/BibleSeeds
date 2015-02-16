@@ -1,45 +1,57 @@
-<div class="row tools">
+<div class="col-xs-12 col-sm-6 col-md-8" style="overflow:scroll; height:800px;">
+	<div class="row tools">
 
-	<div class="pull-left"> 
-	<%= form_tag(controller: "books", action: "search", method: "get") do %>
-	  <%= text_field_tag :s_val, params[:s_val], class: "form-control", placeholder: "Search..." %>
-	<% end %>
+		<div class="pull-left"> 
+		<%= form_tag(controller: "books", action: "search", method: "get") do %>
+		  <%= text_field_tag :s_val, params[:s_val], class: "form-control", placeholder: "Search..." %>
+		<% end %>
+		</div>
+
+		<div class="browser">
+
+				<ul class="nav nav-tabs pull-left" role="tablist">
+				  <li class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				      Browse <span class="caret"></span>
+				    </a>
+				    <ul class="dropdown-menu" role="menu">
+				    	<div class="row" style="width: 450px;">
+				    	<% @books.in_groups_of(33, false).each do |book_array| %>	    	
+					    	<ul class="list-unstyled col-md-5 dropcol">
+					    	       <% for b in book_array %>
+					    		<li><%= link_to b.name, b  %></li>
+					    	       <% end %>
+					    	</ul>	    	
+				    	<% end %>
+				    	</div>
+				    </ul>
+				  </li>
+				</ul>
+
+				<ul class="nav nav-tabs pull-left" role="tablist">
+					  <li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					      Chapters <span class="caret"></span>
+					    </a>
+					    <ul class="dropdown-menu" role="menu">
+					    	<%(1..@chapter).each do |c|%>
+					    	<li><%=link_to c, controller: "books", action: "verse", id: @book, verse_id: c%></li>
+					    	<% end %>
+					    </ul>
+					  </li>
+				</ul>
+		</div>
+
 	</div>
 
-	<ul class="nav nav-tabs pull-right" role="tablist">
-	  <li class="dropdown">
-	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-	      Browse <span class="caret"></span>
-	    </a>
-	    <ul class="dropdown-menu" role="menu">
-	    	<div class="row" style="width: 450px;">
-	    	<% @books.in_groups_of(33, false).each do |book_array| %>	    	
-		    	<ul class="list-unstyled col-md-5 dropcol">
-		    	       <% for b in book_array %>
-		    		<li><%= link_to b.name, b  %></li>
-		    	       <% end %>
-		    	</ul>	    	
-	    	<% end %>
-	    	</div>
-	    </ul>
-	  </li>
-	</ul>
+	<div class="row bib-content">
+	            <%= @res.body.html_safe %>
+	</div>
 
 </div>
 
-<div class="row tools">
-
-	<ul class="nav nav-tabs pull-right" role="tablist">
-		  <li class="dropdown">
-		    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-		      Chapters <span class="caret"></span>
-		    </a>
-		    <ul class="dropdown-menu" role="menu">
-		    	<%(1..@chapter).each do |c|%>
-		    	<li><%=link_to c, controller: "books", action: "verse", id: @book, verse_id: c%></li>
-		    	<% end %>
-		    </ul>
-		  </li>
-	</ul>
-	 <%= @res.body.html_safe %>
+<div class="col-xs-6 col-md-4" style="overflow:scroll; height:800px;">
+<%@videos.videos.each do |v|%>
+	<p><%=v.embed_html5({:width => '100%', :height => 'auto', :fullscreen => 'on'}).html_safe%></p>
+<% end %>
 </div>
