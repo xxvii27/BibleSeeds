@@ -1,6 +1,4 @@
-== README
+#README
 
 Bible study tools and commentatory, either to help pastors to collect and prepare sermon materials or to help people to learn the bible more efficiently.
 
-
-<tt>rake doc:app</tt>.
