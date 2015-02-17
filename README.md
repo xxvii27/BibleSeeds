@@ -11,6 +11,7 @@ Contributions are welcome, please submit a pull request if you're interested.
 Possible Contributions;
 - Add more integrations aside from youtube e.g vimeo, google search ,etc
 - Add more versions and languages of the Bible.
+- Improve UI
 
 ##License
 The MIT License (MIT)
