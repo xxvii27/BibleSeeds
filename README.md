@@ -13,6 +13,9 @@ Possible Contributions;
 - Add more versions and languages of the Bible.
 - Improve UI
 
+##Credits
+Idea adapted from https://github.com/mudiarto/bibleseeds with permission. 
+
 ##License
 The MIT License (MIT)
 
