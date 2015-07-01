@@ -13,6 +13,9 @@ Possible Contributions;
 - Add more versions and languages of the Bible.
 - Improve UI
 
+##Known Issues
+- Input not completely sanitized on search
+
 ##Credits
 Idea adapted from https://github.com/mudiarto/bibleseeds with permission. 
 
